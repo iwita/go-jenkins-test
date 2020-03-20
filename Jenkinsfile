@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                'https://github.com/iwita/go-jenkins-test.git'
+              git 'https://github.com/iwita/go-jenkins-test.git'
             }
 
         }
