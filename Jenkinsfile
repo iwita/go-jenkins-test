@@ -12,7 +12,7 @@ pipeline {
             steps {
               sh 'git --global --unset http.proxy'
               sh 'git --global --unset https.proxy' 	
-              sh 'git clone https://https://github.com/iwita/go-jenkins-test.git
+              sh 'git clone https://https://github.com/iwita/go-jenkins-test.git'
             }
 
         }
