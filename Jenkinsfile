@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                'https://92.43.249.202:3000/evolve/golang-test.git'
+                'https://github.com/iwita/go-jenkins-test.git'
             }
 
         }
