@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-              sh 'git --unset http.proxy'
-              sh 'git --unset https.proxy' 	
+              sh 'git --global --unset http.proxy'
+              sh 'git --global --unset https.proxy' 	
               git 'https://https://github.com/iwita/go-jenkins-test.git'
             }
 
