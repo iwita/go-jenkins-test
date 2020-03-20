@@ -8,12 +8,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Source') {
-            steps {
-              git 'https://https://github.com/iwita/go-jenkins-test.git'
-            }
+        #stage('Checkout Source') {
+        #    steps {
+        #      git 'https://https://github.com/iwita/go-jenkins-test.git'
+        #    }
 
-        }
+        #}
         
         // stage ("Pre-build") {
         //     steps {
