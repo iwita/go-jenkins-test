@@ -25,7 +25,7 @@ pipeline {
         // }
 
         stage('Build Image') {
-             
+            withCredentials([usernamePassword( credentialsId: 'evolve-docker-registry', usernameVariable: 'evolve', passwordVariable: '3v0lv3r3g1st2y')])
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
