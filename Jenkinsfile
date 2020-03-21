@@ -27,6 +27,7 @@ pipeline {
              
             steps {
                 script {
+                    withDockerRegistry([credentialsId: 'evolve-docker-registry', url: "https://172.9.0.240:5000"])
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
