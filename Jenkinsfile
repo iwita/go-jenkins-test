@@ -36,6 +36,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
+                  sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
                   dockerImage.push()
                 }
             }
