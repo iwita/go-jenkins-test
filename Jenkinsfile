@@ -27,7 +27,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    sh 'su -'
+                    sh 'chmod 777 /home/jenkins'
                     sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
