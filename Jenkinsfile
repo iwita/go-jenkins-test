@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "172.9.0.240:5000/iccs/jenkins-test/myweb"
-        registryCredential = 'evolve-docker-registry'
+        registryCredential = 'ca.crt'
         dockerImage = ""
     }
 
