@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "172.9.0.240:5000/iccs/jenkins-test/myweb"
+        registry = "92.43.249.202:5000/iccs/jenkins-test/myweb"
         registryCredential = 'ca.crt'
         dockerImage = ""
     }
