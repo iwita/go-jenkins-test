@@ -27,7 +27,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
+                    sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
