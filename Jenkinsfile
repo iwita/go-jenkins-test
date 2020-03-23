@@ -24,10 +24,21 @@ pipeline {
         //     }
         // }
 
+
+  	stage("Fix the permission issue") {
+
+            agent any
+
+            steps {
+                sh "sudo chown tzenetoa:docker-evolve var/run/docker.sock"
+            }
+
+        }
+
         stage('Build Image') {
             steps {
                 script {
-                    sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
+                    sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
@@ -36,7 +47,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
-                  sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
+                  sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
                   dockerImage.push()
                 }
             }
