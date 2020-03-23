@@ -48,7 +48,9 @@ pipeline {
             steps {
                 script {
                   sh 'docker login -u evolve -p 3v0lv3r3g1st2y'
-                  dockerImage.push()
+		  sh 'echo' + dockerImage
+                 // dockerImage.push()
+		  sh 'docker push 172.9.0.240:5000/
                 }
             }
         }
