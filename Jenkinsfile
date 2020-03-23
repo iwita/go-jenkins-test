@@ -46,9 +46,7 @@ pipeline {
             steps {
                 script {
                   sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
-		  sh 'echo' + dockerImage
-                 // dockerImage.push()
-		  sh 'docker push '
+                  dockerImage.push()
                 }
             }
         }
