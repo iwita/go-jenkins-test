@@ -18,7 +18,8 @@ spec:
       - image: 172.9.0.240:5000/iccs/jenkins-test/myweb"
         imagePullPolicy: Always
         name: myweb    
-      imagePullSecrets: regcred
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
