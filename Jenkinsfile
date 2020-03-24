@@ -48,7 +48,8 @@ pipeline {
             steps {
                 script {
 		  sh 'sudo su'
-                  dockerImage.push()
+                //  dockerImage.push()
+		  sh 'sudo docker push ${dockerImage}'
                 }
             }
         }
