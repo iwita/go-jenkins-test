@@ -9,14 +9,14 @@ pipeline {
     agent any
 
     stages {
-        //stage('Checkout Source') {
+       stage('Checkout Source') {
        //    steps {
 		sh 'git config --global --unset http.proxy'
 		sh 'git config --global --unset https.proxy'
         //      git 'https://https://github.com/iwita/go-jenkins-test.git'
        //    }
 
-        //}
+       }
         
         // stage ("Pre-build") {
         //     steps {
