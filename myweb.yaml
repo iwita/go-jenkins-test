@@ -1,38 +1,38 @@
 ---
-    apiVersion: v1
-    kind: Deployment
-    metadata:
-      labels:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myweb
+  name: myweb
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         app: myweb
-      name: myweb
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
+    template:
+      metadata:
+        labels:
           app: myweb
-      template:
-        metadata:
-          labels:
-            app: myweb
-        spec:
-          containers:
-          - image: 172.9.0.240:5000/iccs/jenkins-test/myweb"
-            imagePullPolicy: Always
-            name: myweb
+      spec:
+        containers:
+        - image: 172.9.0.240:5000/iccs/jenkins-test/myweb"
+          imagePullPolicy: Always
+          name: myweb
     
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        app: myweb
-      name: myweb
-    spec:
-      ports:
-      - nodePort: 32223
-        port: 80
-        protocol: TCP
-        targetPort: 80
-      selector:
-        app: myweb
-      type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myweb
+  name: myweb
+spec:
+  ports:
+  - nodePort: 32223
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myweb
+    type: NodePort
