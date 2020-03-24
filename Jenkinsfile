@@ -16,7 +16,7 @@ pipeline {
         //      git 'https://https://github.com/iwita/go-jenkins-test.git'
        //    }
 
-       }
+     //  }
         
         // stage ("Pre-build") {
         //     steps {
