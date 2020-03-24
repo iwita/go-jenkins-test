@@ -30,7 +30,7 @@ pipeline {
   	stage("Fix the permission issue") {
 
             steps {
-                sh "sudo chown tzenetoa:docker-evolve /var/run/docker.sock"
+                sh "sudo chown root:docker-evolve /var/run/docker.sock"
             }
 
         }
