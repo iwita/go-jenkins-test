@@ -56,6 +56,7 @@ pipeline {
         stage('Deploy App') {
             steps {
                 script {
+		  sh 'sed -i s~${registry}.*~${registry}:${BUILD_NUMBER}"~g myweb.yaml'
 		  kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
                 }
             }

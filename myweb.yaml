@@ -15,7 +15,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: "172.9.0.240:5000/iccs/jenkins-test/myweb:4"
+      - image: 172.9.0.240:5000/iccs/jenkins-test/myweb:1
         imagePullPolicy: Always
         name: myweb    
       imagePullSecrets:
