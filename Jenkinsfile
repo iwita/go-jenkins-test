@@ -49,7 +49,7 @@ pipeline {
                 script {
 		  sh 'sudo su'
                 //  dockerImage.push()
-		  sh "sudo docker push \"${registry}\""
+		  sh "sudo docker push ${registry}"
                 }
             }
         }
