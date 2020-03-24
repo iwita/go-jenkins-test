@@ -5,20 +5,20 @@ metadata:
   labels:
     app: myweb
   name: myweb
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
         app: myweb
-    template:
-      metadata:
-        labels:
-          app: myweb
-      spec:
-        containers:
-        - image: 172.9.0.240:5000/iccs/jenkins-test/myweb"
-          imagePullPolicy: Always
-          name: myweb
+    spec:
+      containers:
+      - image: 172.9.0.240:5000/iccs/jenkins-test/myweb"
+        imagePullPolicy: Always
+        name: myweb
     
 ---
 apiVersion: v1
