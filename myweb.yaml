@@ -15,7 +15,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: "172.9.0.240:5000/iccs/jenkins-test/myweb"
+      - image: "172.9.0.240:5000/iccs/jenkins-test/myweb:4"
         imagePullPolicy: Always
         name: myweb    
       imagePullSecrets:
@@ -30,9 +30,9 @@ spec:
     app: myweb
   ports:
   - nodePort: 32223
-    port: 80
+    port: 3000
     protocol: TCP
-    targetPort: 80
+    targetPort: 3000
   selector:
     app: myweb
   type: NodePort
