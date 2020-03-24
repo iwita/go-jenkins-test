@@ -56,7 +56,7 @@ pipeline {
         stage('Deploy App') {
             steps {
                 script {
-                    step([$class: 'KubernetesEngineBuilder', location: env.LOCATION, manifestPattern: 'myweb.yaml'])
+		  kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
                 }
             }
         }
