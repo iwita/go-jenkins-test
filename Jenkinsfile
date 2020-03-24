@@ -36,7 +36,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
+                    sh 'sudo su'
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
@@ -45,7 +45,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
-                  sh 'sudo docker login -u evolve -p 3v0lv3r3g1st2y'
+		  sh 'sudo su'
                   dockerImage.push()
                 }
             }
