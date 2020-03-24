@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "172.9.0.240:5000/iccs/jenkins-test/myweb"
+        registry = 172.9.0.240:5000/iccs/jenkins-test/myweb
         registryCredential = 'ca.crt'
         dockerImage = ""
     }
@@ -56,7 +56,7 @@ pipeline {
         stage('Deploy App') {
             steps {
                 script {
-		  sh 'sed -i s~${registry}.*~${registry}:${BUILD_NUMBER}"~g myweb.yaml'
+		  sh "sed -i s~${registry}.*~${registry}:${BUILD_NUMBER}"~g myweb.yaml"
 		  kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
                 }
             }
