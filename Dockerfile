@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:latest as builder
 
 LABEL maintainer="Achilleas Tzenetopoulos <atzenetopoulos@microlab.ntua.gr>"
 
@@ -16,6 +16,16 @@ COPY cyos/ .
 
 # Build the Go app
 RUN go build -o bin/main cmd/cyosweb/main.go
+
+#### Start a new stage from scratch ####
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+# Copy the pre-built binary file from the previous stage
+COPY --from-builder /app/bin/main .
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
